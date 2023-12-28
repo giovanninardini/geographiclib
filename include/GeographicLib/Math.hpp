@@ -62,6 +62,12 @@
 #define GEOGRAPHICLIB_PANIC false
 #endif
 
+// FIX FOR OMNET/INET: NaN was define'd by INET, causing errors when including GeographicLib
+// author: Giovanni Nardini
+#if defined(NaN)
+#undef NaN
+#endif
+
 namespace GeographicLib {
 
   /**
